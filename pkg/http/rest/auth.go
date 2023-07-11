@@ -25,7 +25,7 @@ type JWT struct {
 	Token string `json:"token"`
 }
 
-func login(s service.Service) gin.HandlerFunc {
+func Login(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var body Auth
 		if err := c.ShouldBindJSON(&body); err != nil {

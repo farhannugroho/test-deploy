@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/api/v1/users",
-            "dest": "handlers.go"
+            "dest": "main.go"
         }
     ]
 }

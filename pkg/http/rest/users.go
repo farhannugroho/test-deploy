@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func addUser(s service.Service) gin.HandlerFunc {
+func AddUser(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var body model.User
 		if err := c.ShouldBindJSON(&body); err != nil {
@@ -30,7 +30,7 @@ func addUser(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func addUsers(s service.Service) gin.HandlerFunc {
+func AddUsers(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		file, err := c.FormFile("file")
 		if err != nil {
@@ -48,7 +48,7 @@ func addUsers(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func getUsers(s service.Service) gin.HandlerFunc {
+func GetUsers(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var res []model.User
 		var ttl int64
@@ -70,7 +70,7 @@ func getUsers(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func getUser(s service.Service) gin.HandlerFunc {
+func GetUser(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var res model.User
 
@@ -91,7 +91,7 @@ func getUser(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func getLoggedUser(s service.Service) gin.HandlerFunc {
+func GetLoggedUser(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var res model.User
 
@@ -114,7 +114,7 @@ func getLoggedUser(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func editUser(s service.Service) gin.HandlerFunc {
+func EditUser(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var body model.User
 		if err := c.ShouldBindJSON(&body); err != nil {
@@ -139,7 +139,7 @@ func editUser(s service.Service) gin.HandlerFunc {
 	}
 }
 
-func removeUser(s service.Service) gin.HandlerFunc {
+func RemoveUser(s service.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var body model.User
 
