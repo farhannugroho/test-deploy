@@ -13,7 +13,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func Handler() {
 	goEnv := strings.ToLower(os.Getenv("GO_ENV"))
 	if goEnv == "" {
 		goEnv = "local"
@@ -91,4 +91,8 @@ func GetLocalIP() string {
 	}
 
 	return ""
+}
+
+func main() {
+	Handler()
 }
